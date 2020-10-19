@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "g++ debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/morfo70_debug",
+            "args": ["-ind='test/input'",
+                "-outd='test/output'",
+                //"-inif=base_case.ini,theta_70.ini",
+                //"-batf='Ly0600dy05_random.nc'"
+                "-inif=wave_hydro_wc_it20_case.ini",
+                "-batf='EGU_bathy_dy02.nc'"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",            
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",            
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build g++ debug",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
